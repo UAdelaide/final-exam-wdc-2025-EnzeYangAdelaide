@@ -86,8 +86,8 @@
         <button class="step-btn" @click="goStep(2)" tabindex="-1">2</button>
         <button class="step-btn" @click="goStep(3)" tabindex="-1">3</button>
         <button class="step-btn" @click="goStep(4)" tabindex="-1">4</button>
-        </div>
-        <div class="dog-section" v-if="step === 4">
+      </div>
+      <div class="dog-section" v-if="step === 4">
         <div>
             <!-- 去掉了空格 -->
             <img :src="dogImg" style="width: 250px; height: 250px; border-radius: 50%; border: 4px solid #ffcccb; margin-right: 30px;">
@@ -98,5 +98,5 @@
             <div>Age: <span style="color: #b0e0e6;">3</span></div>
         </div>
         <div class="fake-btn" @click="fetchDog">See another dog!</div>
-        </div>
+      </div>
 
