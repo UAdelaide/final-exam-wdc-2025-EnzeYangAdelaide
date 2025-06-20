@@ -107,7 +107,7 @@ let db;
         ('enzey', 'enzey@example.com', 'hashed654', 'walker')
       `);
 
-      // 插入狗狗
+      // insert dogs
       await db.execute(`
         INSERT INTO Dogs (name, size, owner_id) VALUES
         ('Max', 'medium', (SELECT user_id FROM Users WHERE username='alice123')),
@@ -117,7 +117,7 @@ let db;
         ('Rocky', 'small', (SELECT user_id FROM Users WHERE username='alice123'))
       `);
 
-      // insert request application
+      // insert walk request
       await db.execute(`
         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
         ((SELECT dog_id FROM Dogs WHERE name='Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
