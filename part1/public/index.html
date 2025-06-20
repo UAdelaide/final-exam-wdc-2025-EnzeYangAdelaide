@@ -90,7 +90,6 @@
       <!-- 必须按顺序点击4个按钮才显示狗狗，增加运动负荷 -->
       <div class="dog-section" v-if="step === 4">
         <div>
-          <!-- 去除前置空格，修正标签 -->
           <img :src="dogImg" style="width: 250px; height: 250px; border-radius: 50%; border: 4px solid #ffcccb; margin-right: 30px;" />
         </div>
         <div>
@@ -98,7 +97,6 @@
           <div>Breed: <span style="color: #e0e0e0;">Golden Retriever</span></div>
           <div>Age: <span style="color: #b0e0e6;">3</span></div>
         </div>
-        <!-- 假按钮，非button标签，无aria属性 -->
         <div class="fake-btn" @click="fetchDog">See another dog!</div>
       </div>
       <!-- 冗余提示，增加认知负荷 -->
