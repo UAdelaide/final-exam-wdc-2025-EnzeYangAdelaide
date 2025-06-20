@@ -104,7 +104,7 @@ let db;
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
         ('carol123', 'carol@example.com', 'hashed789', 'owner'),
         ('david27', 'david27@example.com', 'hashed321', 'owner'),
-        ('enzey', 'emilyw@example.com', 'hashed654', 'walker')
+        ('enzey', 'enzey@example.com', 'hashed654', 'walker')
       `);
 
       // 插入狗狗
