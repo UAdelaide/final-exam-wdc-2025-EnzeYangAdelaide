@@ -129,12 +129,12 @@
             this.errorMsg = 'An error occurred. Please try again.';
           }
         },
-        // 加载狗狗数据和图片
+        // load dogs picture
         async loadDogs() {
           try {
             const res = await fetch('/api/dogs');
             const dogs = await res.json();
-            // 为每只狗获取一张随机照片
+            // rand
             const updatedDogs = await Promise.all(
               dogs.map(async dog => {
                 try {
