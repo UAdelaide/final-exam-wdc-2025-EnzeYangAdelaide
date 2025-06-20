@@ -25,9 +25,8 @@
       <button @click="login" class="btn btn-primary w-100">Login</button>
     </div>
     <div v-else-if="page === 'owner'">
-      <h2 class="text-success">Owner Dashboard</h2>
-      <p>Welcome, {{ user.username }}! (Owner)</p>
-      <button @click="logout" class="btn btn-secondary">Logout</button>
+      <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
+
     </div>
     <div v-else-if="page === 'walker'">
       <h2 class="text-info">Walker Dashboard</h2>
