@@ -62,7 +62,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Login failed' });
   }
 });
-
+// POST login (dummy version)
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
