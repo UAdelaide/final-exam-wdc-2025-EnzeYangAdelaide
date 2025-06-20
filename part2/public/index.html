@@ -15,7 +15,7 @@
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
     <!--Login card-->
-    <div class="card p-4 shadow-sm" style="max-width: 400px; margin:auto;">
+    <div class="card p-4 shadow-sm mb-5" style="max-width: 400px; margin:auto;">
       <h4 class="mb-3">Login</h4>
 
       <!--Username input-->
@@ -36,44 +36,40 @@
       <!--Login button-->
       <button @click="login" class="btn btn-primary w-100">Login</button>
     </div>
-  </div>
 
-  <!-- Dog List Table -->
-  <div class="mb-5">
-    <h4 class="mb-3">All Dogs</h4>
-    <div v-if="dogs.length">
-      <table class="table table-bordered table-hover align-middle">
-        <thead class="table-light">
-          <tr>
-
-            <th>Dog ID</th>
-            <th>Name</th>
-            <th>Size</th>
-            <th>Owner ID</th>
-            <th>Photo</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="dog in dogs" :key="dog.dog_id">
-            <td>
-              <img :src="dog.photo" alt="Dog photo" style="width:80px; height:80px; object-fit:cover; border-radius:12px;">
-            </td>
-            <td>{{ dog.dog_id }}</td>
-            <td>{{ dog.name }}</td>
-            <td>{{ dog.size }}</td>
-            <td>{{ dog.owner_id }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Dog List Table (now below login card) -->
+    <div>
+      <h4 class="mb-3">All Dogs</h4>
+      <div v-if="dogs.length">
+        <table class="table table-bordered table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Photo</th>
+              <th>Dog ID</th>
+              <th>Name</th>
+              <th>Size</th>
+              <th>Owner ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="dog in dogs" :key="dog.dog_id">
+              <td>
+                <img :src="dog.photo" alt="Dog photo" style="width:80px; height:80px; object-fit:cover; border-radius:12px;">
+              </td>
+              <td>{{ dog.dog_id }}</td>
+              <td>{{ dog.name }}</td>
+              <td>{{ dog.size }}</td>
+              <td>{{ dog.owner_id }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div v-else class="text-muted">Loading doggos...</div>
     </div>
-    <div v-else class="text-muted">Loading doggs...</div>
   </div>
-
 
   <script>
     const { createApp } = Vue;
-
 
     createApp({
       data() {
@@ -81,7 +77,7 @@
           message: 'Welcome to the Dog Walking Service!',
           username: '',     //username input
           password: '',     //password input
-          errorMsg: '',      //display error messages
+          errorMsg: '',     //display error messages
           dogs: []          //dog list
         };
       },
@@ -93,7 +89,7 @@
         async login() {
           this.errorMsg = ''; //back error message
 
-          //client side validatin
+          //client side validation
           if (!this.username || !this.password) {
             this.errorMsg = 'Please enter username and password.';
             return;
@@ -109,8 +105,6 @@
               }),
               credentials: 'include'
             });
-
-
 
             const data = await res.json();
 
@@ -133,11 +127,12 @@
             this.errorMsg = 'An error occurred. Please try again.';
           }
         },
+        // 加载狗狗数据和图片
         async loadDogs() {
           try {
             const res = await fetch('/api/dogs');
             const dogs = await res.json();
-            // randomly generate a photo for each dog
+            // 为每只狗获取一张随机照片
             const updatedDogs = await Promise.all(
               dogs.map(async dog => {
                 try {
