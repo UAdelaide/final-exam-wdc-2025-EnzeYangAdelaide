@@ -11,7 +11,7 @@ app.use(express.json());
 const dbConfig = {
   host: 'localhost',
   user: '你的数据库用户名',
-  password: '你的数据库密码',
+  password: '',
   database: 'DogWalkService'
 };
 
