@@ -61,7 +61,7 @@
               this.errorMsg = data.message || 'Login failed.';
               return;
             }
-            // 跳转到对应dashboard
+            // jump to owner or walker
             if (data.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
             } else if (data.role === 'walker') {
@@ -70,7 +70,7 @@
               this.errorMsg = 'Unknown user role.';
             }
           } catch (e) {
-            this.errorMsg = 'Network error.';
+            this.errorMsg = ' error.';
           }
         }
       }
