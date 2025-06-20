@@ -117,7 +117,7 @@ let db;
         ('Rocky', 'small', (SELECT user_id FROM Users WHERE username='alice123'))
       `);
 
-      // 插入遛狗请求
+      // insert request application
       await db.execute(`
         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
         ((SELECT dog_id FROM Dogs WHERE name='Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
@@ -127,7 +127,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name='Rocky'), '2025-06-13 16:30:00', 20, 'Mawson Lakes', 'open')
       `);
 
-      // insert WalkRatings，pretend walks请求id为2,3，walker为bobwalker
+      // insert WalkRatings，pretend walks request id 2,3，walker is bobwalker
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
         VALUES
