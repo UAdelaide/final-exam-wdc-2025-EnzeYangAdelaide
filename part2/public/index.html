@@ -35,23 +35,22 @@
       <!-- Error message display -->
       <div v-if="errorMsg" class="alert alert-danger py-1">{{ errorMsg }}</div>
 
-      <!-- Login button -->
+      <!--Login button -->
       <button @click="login" class="btn btn-primary w-100">Login</button>
     </div>
   </div>
 
   <script>
-    // Import Vue's createApp function
     const { createApp } = Vue;
 
-    // Create and mount the Vue app
+
     createApp({
       data() {
         return {
-          message: 'Welcome to the Dog Walking Service!', // Page title
+          message: 'Welcome to the Dog Walking Service!',
           username: '',     //username input
           password: '',     //password input
-          errorMsg: ''      // To display error messages
+          errorMsg: ''      //display error messages
         };
       },
       methods: {
