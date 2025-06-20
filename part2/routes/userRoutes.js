@@ -85,7 +85,7 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   // If using sessions:
   req.session.destroy(() => {
-    res.clearCookie('connect.sid'); //
+    res.clearCookie('continueCode'); //
     res.json({ message: 'Logged out' });
   });
 });
