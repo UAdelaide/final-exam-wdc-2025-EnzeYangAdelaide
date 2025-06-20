@@ -103,8 +103,8 @@ let db;
         ('alice123', 'alice@example.com', 'hashed123', 'owner'),
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
         ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('david99', 'david99@example.com', 'hashed321', 'owner'),
-        ('emilyw', 'emilyw@example.com', 'hashed654', 'walker')
+        ('david27', 'david27@example.com', 'hashed321', 'owner'),
+        ('enzey', 'emilyw@example.com', 'hashed654', 'walker')
       `);
 
       // 插入狗狗
@@ -112,7 +112,7 @@ let db;
         INSERT INTO Dogs (name, size, owner_id) VALUES
         ('Max', 'medium', (SELECT user_id FROM Users WHERE username='alice123')),
         ('Bella', 'small', (SELECT user_id FROM Users WHERE username='carol123')),
-        ('Charlie', 'large', (SELECT user_id FROM Users WHERE username='david99')),
+        ('Charlie', 'large', (SELECT user_id FROM Users WHERE username='david27')),
         ('Lucy', 'medium', (SELECT user_id FROM Users WHERE username='carol123')),
         ('Rocky', 'small', (SELECT user_id FROM Users WHERE username='alice123'))
       `);
