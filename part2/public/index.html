@@ -135,7 +135,7 @@
           try {
             const res = await fetch('/api/dogs');
             const dogs = await res.json();
-            // 为每只狗获取一张随机照片
+            // randomly generate a photo for each dog
             const updatedDogs = await Promise.all(
               dogs.map(async dog => {
                 try {
