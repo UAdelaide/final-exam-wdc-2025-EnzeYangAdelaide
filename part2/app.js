@@ -8,7 +8,7 @@ const app = express();
 
 
 
-app.use(session({
+app.use(session({//session created
   secret: 'mysecret',
   resave: false,
   saveUninitialized: false,
