@@ -13,8 +13,19 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
-    <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
-    <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
+    <div class="card p-4 shadow-sm" style="max-width: 400px; margin:auto;">
+      <h4 class="mb-3">Login</h4>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input v-model="username" id="username" type="text" class="form-control" autocomplete="username">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input v-model="password" id="password" type="password" class="form-control" autocomplete="current-password">
+      </div>
+      <div v-if="errorMsg" class="alert alert-danger py-1">{{ errorMsg }}</div>
+      <button @click="login" class="btn btn-primary w-100">Login</button>
+    </div>
   </div>
 
   <script>
@@ -22,8 +33,45 @@
     createApp({
       data() {
         return {
-          message: 'Welcome to the Dog Walking Service!'
+          message: 'Welcome to the Dog Walking Service!',
+          username: '',
+          password: '',
+          errorMsg: ''
         };
+      },
+      methods: {
+        async login() {
+          this.errorMsg = '';
+          if (!this.username || !this.password) {
+            this.errorMsg = 'Please enter username and password.';
+            return;
+          }
+          try {
+            const res = await fetch('/api/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                username: this.username,
+                password: this.password
+              })
+            });
+            const data = await res.json();
+            if (!res.ok) {
+              this.errorMsg = data.message || 'Login failed.';
+              return;
+            }
+            // 跳转到对应dashboard
+            if (data.role === 'owner') {
+              window.location.href = 'owner-dashboard.html';
+            } else if (data.role === 'walker') {
+              window.location.href = 'walker-dashboard.html';
+            } else {
+              this.errorMsg = 'Unknown user role.';
+            }
+          } catch (e) {
+            this.errorMsg = 'Network error.';
+          }
+        }
       }
     }).mount('#app');
   </script>
