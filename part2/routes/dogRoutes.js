@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-// 获取当前登录用户的所有狗
+
 router.get('/mine', async (req, res) => {
-  
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
