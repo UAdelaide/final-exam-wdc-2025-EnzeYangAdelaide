@@ -11,10 +11,10 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
+const dogsRouter = require('./routes/dogs');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-const dogsRouter = require('./routes/dogs');
 app.use('/api/dogs', dogsRouter);
 
 

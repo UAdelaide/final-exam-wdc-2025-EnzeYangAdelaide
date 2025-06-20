@@ -4,7 +4,7 @@ const db = require('../models/db');
 
 // 获取当前登录用户的所有狗
 router.get('/mine', async (req, res) => {
-  // 检查是否登录
+  
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
