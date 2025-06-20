@@ -9,13 +9,40 @@
 </head>
 <body class="bg-light">
 
+  <body class="bg-light">
   <div id="app" class="container py-5">
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
-
-    <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
-    <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
+    <div v-if="currentPage === 'login'" class="card p-4 shadow-sm" style="max-width: 400px; margin:auto;">
+      <h4 class="mb-3">Login</h4>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input v-model="loginUsername" id="username" type="text" class="form-control" placeholder="Enter your username" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Identity</label>
+        <select v-model="loginIdentity" class="form-select">
+          <option disabled value="">Select identity</option>
+          <option value="owner">Owner</option>
+          <option value="walker">Walker</option>
+        </select>
+      </div>
+      <div v-if="errorMsg" class="alert alert-danger py-1">{{ errorMsg }}</div>
+      <button @click="login" class="btn btn-primary w-100">Login</button>
+    </div>
+    <div v-else-if="currentPage === 'owner'">
+      <h2 class="text-success">Owner Dashboard</h2>
+      <p>Welcome, {{ user.username }}! (Owner)</p>
+      <button @click="logout" class="btn btn-secondary">Logout</button>
+    </div>
+    <div v-else-if="currentPage === 'walker'">
+      <h2 class="text-info">Walker Dashboard</h2>
+      <p>Welcome, {{ user.username }}! (Walker)</p>
+      <button @click="logout" class="btn btn-secondary">Logout</button>
+    </div>
   </div>
+
+
 
   <script>
     const { createApp } = Vue;
