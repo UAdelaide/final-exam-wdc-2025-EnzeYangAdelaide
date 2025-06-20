@@ -1,6 +1,5 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
@@ -8,6 +7,8 @@ a {
 }
   <style>
     body {
+      padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
       background: linear-gradient(45deg, #ffcccb, #b0e0e6, #ffffe0, #d3ffce);
       font-family: 'Comic Sans MS', cursive, sans-serif;
       color: #cccccc;
