@@ -44,7 +44,6 @@
         <table class="table table-bordered table-hover align-middle">
           <thead class="table-light">
             <tr>
-
               <th>Dog ID</th>
               <th>Name</th>
               <th>Size</th>
@@ -54,7 +53,6 @@
           </thead>
           <tbody>
             <tr v-for="dog in dogs" :key="dog.dog_id">
-
               <td>{{ dog.dog_id }}</td>
               <td>{{ dog.name }}</td>
               <td>{{ dog.size }}</td>
@@ -62,7 +60,6 @@
               <td>
                 <img :src="dog.photo" alt="Dog photo" style="width:80px; height:80px; object-fit:cover; border-radius:12px;">
               </td>
-
             </tr>
           </tbody>
         </table>
