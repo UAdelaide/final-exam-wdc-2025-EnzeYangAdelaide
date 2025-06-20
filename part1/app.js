@@ -123,14 +123,14 @@ app.use(async (req, res, next) => {
 
 // Routes (example)
 const usersRouter = require('./routes/users');
-const dogsRouter = require('./routes/dogs');
+const dogRouter = require('./routes/dog');
 const walkRequestsRouter = require('./routes/walkRequests');
 const walkApplicationsRouter = require('./routes/walkApplications');
 const walkRatingsRouter = require('./routes/walkRatings');
 const paymentsRouter = require('./routes/payments');
 
 app.use('/users', usersRouter);
-app.use('/dogs', dogsRouter);
+app.use('/dog', dogRouter);
 app.use('/walk-requests', walkRequestsRouter);
 app.use('/walk-applications', walkApplicationsRouter);
 app.use('/walk-ratings', walkRatingsRouter);
