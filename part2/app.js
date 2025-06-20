@@ -15,7 +15,7 @@ const dogsRouter = require('./routes/dogRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/dogRou', dogsRouter);
+app.use('/api/dogs', dogsRouter);
 
 
 // Export the app instead of listening here
