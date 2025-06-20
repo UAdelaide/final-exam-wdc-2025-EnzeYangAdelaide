@@ -15,7 +15,7 @@ let db;
 
 (async () => {
   try {
-    // 1. 创建数据库连接（用于初始化）
+    // 1. create databse connction (for）
     const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
