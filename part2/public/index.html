@@ -55,17 +55,17 @@
         };
       },
       methods: {
-        // Handles the login button click
+        //Handles the login button click
         async login() {
           this.errorMsg = ''; // Reset error message
 
-          // Simple client-side validatin
+          //client side validatin
           if (!this.username || !this.password) {
             this.errorMsg = 'Please enter username and password.';
             return;
           }
           try {
-            // Send POST request to backend
+            //Send POST request to backend
             const res = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -78,7 +78,7 @@
 
             const data = await res.json();
 
-            // login failed error message
+            //login failed error message
             if (!res.ok) {
               this.errorMsg = data.message || 'Login failed.';
               return;
