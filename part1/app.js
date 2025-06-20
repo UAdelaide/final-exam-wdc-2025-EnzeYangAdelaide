@@ -94,10 +94,9 @@ let db;
       multipleStatements: true
     });
 
-    // 4. 插入测试数据（仅当Users表为空时）
-    const [users] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+    
     if (users[0].count === 0) {
-      // 插入用户
+      // insert users
       await db.execute(`
         INSERT INTO Users (username, email, password_hash, role) VALUES
         ('alice123', 'alice@example.com', 'hashed123', 'owner'),
