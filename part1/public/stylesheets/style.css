@@ -1,18 +1,13 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-
-
-  body {
     background: linear-gradient(45deg, #ffcccb, #b0e0e6, #ffffe0, #d3ffce);
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     color: #cccccc; /* 低对比度 */
   }
-  a {
+a {
   color: #00B7FF;
-  }
+}
   .container {
     display: flex;
     flex-direction: column;
