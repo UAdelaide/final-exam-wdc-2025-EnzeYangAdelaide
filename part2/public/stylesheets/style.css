@@ -8,6 +8,11 @@ body {
     padding: 0;
 }
 
+.small-table th, .small-table td {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+}
+
 header {
     background-color: rgb(250, 250, 251);
     border-top: 3px solid orange;
@@ -70,7 +75,7 @@ footer h4 {
     font-weight: normal;
 }
 
-.post .date 
+.post .date
     float: right;
 }
 
