@@ -101,13 +101,15 @@
         }
         async function loadDogs() {
           try {
-            const res = await fetch('/api/dogs/mine');
-            credentials: true
-            dogs.value = await res.json();
-          } catch (err) {
-            error.value = 'Failed to load your dogs';
-          }
-        }
+            const res = await fetch('/api/dogs/mine', {
+            credentials: 'include'
+    });
+    dogs.value = await res.json();
+  } catch (err) {
+    error.value = 'Failed to load your dogs';
+  }
+}
+
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
