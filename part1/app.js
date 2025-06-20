@@ -174,7 +174,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 // 3. /api/walkers/summary
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    // 所有walker
+    // all walker
     const [walkers] = await db.execute(`
       SELECT user_id, username
       FROM Users
