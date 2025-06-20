@@ -44,17 +44,17 @@
     <div v-if="dogs.length">
       <table class="table table-bordered table-hover align-middle">
         <thead class="table-light">
-            <tr>
-              <th>Photo</th>
-              <th>Dog ID</th>
-              <th>Name</th>
-              <th>Size</th>
-              <th>Owner ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="dog in dogs" :key="dog.dog_id">
-              <td>
+          <tr>
+            <th>Photo</th>
+            <th>Dog ID</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Owner ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="dog in dogs" :key="dog.dog_id">
+            <td>
                 <img :src="dog.photo" alt="Dog photo" style="width:80px; height:80px; object-fit:cover; border-radius:12px;">
               </td>
               <td>{{ dog.dog_id }}</td>
