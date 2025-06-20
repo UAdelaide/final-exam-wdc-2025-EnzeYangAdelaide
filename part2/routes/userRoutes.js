@@ -38,7 +38,7 @@ router.get('/me', (req, res) => {
 
 
 
-// POST /api/users/login
+// /api/users/login
 router.post('/login', async (req, res) => {
   const { username, password } = req.body; // 注意这里是username
 
