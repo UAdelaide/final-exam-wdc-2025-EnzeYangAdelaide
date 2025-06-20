@@ -2,6 +2,15 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
+
+db = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '', // empty
+      database: 'DogWalkService',
+      multipleStatements: true
+    });
+
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {
