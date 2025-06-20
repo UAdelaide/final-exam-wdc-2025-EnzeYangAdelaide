@@ -1,5 +1,8 @@
 const express = require('express');
 const path = require('path');
+const mysql = require('mysql2/promise');
+const bcrypt = require('bcryptjs');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
@@ -20,10 +23,7 @@ module.exports = app;
 
 // app.js
 
-const mysql = require('mysql2/promise');
-const bcrypt = require('bcryptjs');
-const cors = require('cors');
-const app = express();
+
 
 app.use(cors());
 app.use(express.json());
