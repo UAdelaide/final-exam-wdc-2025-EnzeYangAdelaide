@@ -122,7 +122,7 @@
       },
       methods: {
         fetchDog() {
-          fetch('https://dog.ceo/api/breeds/image/random')
+          fetch('https://dog.ceo/dog-api/documentation/random')
             .then(res => res.json())
             .then(data => {
               this.dogImg = data.message;
