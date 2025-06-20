@@ -78,13 +78,13 @@
             // Parse JSON response
             const data = await res.json();
 
-            // If login failed, show error message
+            // login failed error message
             if (!res.ok) {
               this.errorMsg = data.message || 'Login failed.';
               return;
             }
 
-            // Redirect user based on their role
+            // Redirect user on their role
             if (data.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
             } else if (data.role === 'walker') {
