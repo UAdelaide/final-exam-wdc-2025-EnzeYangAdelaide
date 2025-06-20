@@ -81,7 +81,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// routes/users.js
+
 router.post('/logout', (req, res) => {
   req.session.destroy(() => {
     res.clearCookie('continueCode');
