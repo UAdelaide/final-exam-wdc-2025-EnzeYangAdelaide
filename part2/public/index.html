@@ -83,6 +83,8 @@
           dogs: []          //dog list
         };
       },
+      mounted() {
+        this.loadDogs();
       methods: {
         //Handles the login button click
         async login() {
