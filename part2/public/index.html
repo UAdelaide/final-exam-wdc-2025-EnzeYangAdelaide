@@ -47,14 +47,15 @@
             return;
           }
           try {
-            const res = await fetch('/api/login', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                username: this.username,
-                password: this.password
+            const res = await fetch('/api/users/login', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify({
+                 username: this.username,
+                 password: this.password
               })
             });
+
             const data = await res.json();
             if (!res.ok) {
               this.errorMsg = data.message || 'Login failed.';
