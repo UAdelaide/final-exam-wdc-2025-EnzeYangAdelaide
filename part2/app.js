@@ -3,6 +3,14 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
+const session = require('express-session');
+
+app.use(session({
+  secret: 'yourSecretKey', // 换成你自己的密钥
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // 开发环境下 secure 要为 false
+}));
 
 // Middleware
 app.use(express.json());
