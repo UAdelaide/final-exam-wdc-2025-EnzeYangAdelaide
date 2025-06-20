@@ -127,7 +127,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name='Rocky'), '2025-06-13 16:30:00', 20, 'Mawson Lakes', 'open')
       `);
 
-      // 插入 WalkRatings，假设已完成的walks请求id为2,3，walker为bobwalker
+      // insert WalkRatings，pretend walks请求id为2,3，walker为bobwalker
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
         VALUES
