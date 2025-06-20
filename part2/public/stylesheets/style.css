@@ -13,6 +13,12 @@ body {
   font-size: 0.9rem;
 }
 
+.table-wrapper {
+  max-width: 400px;   /* 你可以根据需要调整宽度 */
+  margin: 0 auto;     
+}
+
+
 header {
     background-color: rgb(250, 250, 251);
     border-top: 3px solid orange;
