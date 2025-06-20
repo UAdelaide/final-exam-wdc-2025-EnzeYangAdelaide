@@ -130,8 +130,28 @@
             // network or other errors
             this.errorMsg = 'An error occurred. Please try again.';
           }
+        },
+        async loadDogs() {
+          try {
+            const res = await fetch('/api/dogs');
+            const dogs = await res.json();
+            // 为每只狗获取一张随机照片
+            const updatedDogs = await Promise.all(
+              dogs.map(async dog => {
+                try {
+                  const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
+                  const imgData = await imgRes.json();
+                  return { ...dog, photo: imgData.message };
+                } catch {
+                  return { ...dog, photo: '' };
+                }
+              })
+            );
+            this.dogs = updatedDogs;
+          } catch (e) {
+            this.dogs = [];
+          }
         }
-        
       }
     }).mount('#app');
   </script>
