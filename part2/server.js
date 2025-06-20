@@ -10,7 +10,7 @@ app.use(express.json());
 // 数据库连接配置
 const dbConfig = {
   host: 'localhost',
-  user: '你的数据库用户名',
+  user: 'root',
   password: '',
   database: 'DogWalkService'
 };
