@@ -15,11 +15,11 @@ let db;
 
 (async () => {
   try {
-    // 1. create databse connction (for）
+    // 1. create databse connction (for initialization）
     const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '', // 改成你的MySQL root密码
+      password: '', // empty
       multipleStatements: true
     });
 
