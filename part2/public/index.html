@@ -20,22 +20,22 @@
     <div class="card p-4 shadow-sm" style="max-width: 400px; margin:auto;">
       <h4 class="mb-3">Login</h4>
 
-      <!-- Username input -->
+      <!--Username input -->
       <div class="mb-3">
         <label for="username" class="form-label">Username</label>
         <input v-model="username" id="username" type="text" class="form-control" autocomplete="username">
       </div>
 
-      <!-- Password input -->
+      <!--Password input-->
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input v-model="password" id="password" type="password" class="form-control" autocomplete="current-password">
       </div>
 
-      <!-- Error message display -->
+      <!--Error message display-->
       <div v-if="errorMsg" class="alert alert-danger py-1">{{ errorMsg }}</div>
 
-      <!--Login button -->
+      <!--Login button-->
       <button @click="login" class="btn btn-primary w-100">Login</button>
     </div>
   </div>
