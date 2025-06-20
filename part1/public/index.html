@@ -74,14 +74,14 @@
       <div>
         <span style="background: #b0e0e6; padding: 5px;">Welcome to the best dog walking service!!!</span>
       </div>
-      <!-- 步骤按钮分散布局，增加运动负荷 -->
+    
       <div style="display: flex; gap: 200px;">
         <button class="step-btn" @click="goStep(1)" tabindex="-1">1</button>
         <button class="step-btn" @click="goStep(2)" tabindex="-1">2</button>
         <button class="step-btn" @click="goStep(3)" tabindex="-1">3</button>
         <button class="step-btn" @click="goStep(4)" tabindex="-1">4</button>
       </div>
-      <!--you should -->
+      <!--you should click four button one by one then you can view the dogs picture -->
       <div class="dog-section" v-if="step === 4">
         <div>
           <img :src="dogImg" style="width: 250px; height: 250px; border-radius: 50%; border: 4px solid #ffcccb; margin-right: 30px;" />
