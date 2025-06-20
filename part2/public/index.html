@@ -129,12 +129,12 @@
             this.errorMsg = 'An error occurred. Please try again.';
           }
         },
-        // load dogs picture
+        // load dogs infomation
         async loadDogs() {
           try {
             const res = await fetch('/api/dogs');
             const dogs = await res.json();
-            // rand
+            // randomly generate dog photo
             const updatedDogs = await Promise.all(
               dogs.map(async dog => {
                 try {
