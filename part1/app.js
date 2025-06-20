@@ -142,8 +142,6 @@ let db;
   }
 })();
 
-// ----------- 路由部分 -----------
-
 // 1. /api/dogs
 app.get('/api/dogs', async (req, res) => {
   try {
