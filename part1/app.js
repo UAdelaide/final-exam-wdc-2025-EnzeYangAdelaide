@@ -23,7 +23,7 @@ let db;
       multipleStatements: true
     });
 
-    // 2. 初始化数据库和表
+    // 2. default database
     await connection.query(`
       DROP DATABASE IF EXISTS DogWalkService;
       CREATE DATABASE DogWalkService;
@@ -85,7 +85,7 @@ let db;
 
     await connection.end();
 
-    // 3. 连接到新数据库，建立持久连接池
+    // 3. connect new database
     db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
