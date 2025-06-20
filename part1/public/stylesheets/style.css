@@ -7,8 +7,8 @@ body {
   }
 a {
   color: #00B7FF;
-}
-  .container {
+  }
+.container {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -17,7 +17,7 @@ a {
     padding: 40px;
     gap: 20px;
   }
-  .dog-section {
+.dog-section {
     border: 5px dotted #e0e0e0;
     padding: 30px 80px 10px 5px;
     margin-bottom: 30px;
@@ -29,7 +29,7 @@ a {
     overflow-x: scroll;
   }
   /* 很小的按钮，分散放置 */
-  .step-btn {
+.step-btn {
     width: 40px;
     height: 40px;
     margin: 30px 0 0 30px;
@@ -41,11 +41,11 @@ a {
     cursor: pointer;
     /* 低对比度，难以看清 */
   }
-  .hidden {
+.hidden {
     display: none;
   }
   /* 非语义化控件 */
-  .fake-btn {
+.fake-btn {
     display: inline-block;
     padding: 7px 15px;
     background: #ffcccb;
