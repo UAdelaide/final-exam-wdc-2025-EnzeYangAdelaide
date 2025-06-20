@@ -58,6 +58,12 @@
             error.value = err.message;
           }
         }
+        async function getCurrentUser() {
+        const res = await fetch('/api/users/me', { credentials: 'include' });
+  if (!res.ok) throw new Error('Unable to fetch user info');
+  return await res.json();
+}
+
 
         async function applyToWalk(requestId) {
           try {
