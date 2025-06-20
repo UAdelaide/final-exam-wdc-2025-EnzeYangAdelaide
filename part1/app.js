@@ -89,7 +89,7 @@ let db;
     db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '', // 改成你的MySQL root密码
+      password: '', // empty
       database: 'DogWalkService',
       multipleStatements: true
     });
