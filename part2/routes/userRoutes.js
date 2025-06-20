@@ -35,7 +35,34 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-// POST login (dummy version)
+
+
+// POST /api/users/login
+router.post('/login', async (req, res) => {
+  const { username, password } = req.body; // 注意这里是username
+
+  try {
+    // 查找用户，真实项目中password_hash应该是加密的，这里假设明文
+    const [rows] = await db.query(`
+      SELECT user_id, username, role
+      FROM Users
+      WHERE username = ? AND password_hash = ?
+    `, [username, password]);
+
+    if (rows.length === 0) {
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+
+    // 返回用户名和角色
+    res.json({
+      username: rows[0].username,
+      role: rows[0].role
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Login failed' });
+  }
+});
+
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
