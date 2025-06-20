@@ -124,7 +124,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name='Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
         ((SELECT dog_id FROM Dogs WHERE name='Charlie'), '2025-06-11 10:00:00', 60, 'Morialta Park', 'open'),
         ((SELECT dog_id FROM Dogs WHERE name='Lucy'), '2025-06-12 14:00:00', 30, 'Botanic Garden', 'open'),
-        ((SELECT dog_id FROM Dogs WHERE name='Rocky'), '2025-06-13 16:30:00', 20, 'Mawson Lakes', 'pending')
+        ((SELECT dog_id FROM Dogs WHERE name='Rocky'), '2025-06-13 16:30:00', 20, 'Mawson Lakes', 'open')
       `);
 
       // 插入 WalkRatings，假设已完成的walks请求id为2,3，walker为bobwalker
