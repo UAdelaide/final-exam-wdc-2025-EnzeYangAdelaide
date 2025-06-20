@@ -81,11 +81,11 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// routes/users.js 
+// routes/users.js
 router.post('/logout', (req, res) => {
   // If using sessions:
   req.session.destroy(() => {
-    res.clearCookie('connect.sid'); // or your session cookie name
+    res.clearCookie('connect.sid'); // 
     res.json({ message: 'Logged out' });
   });
 });
