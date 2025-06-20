@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
-     //return the 
+    //return the info they searched//
     res.json({
       username: rows[0].username,
       role: rows[0].role
