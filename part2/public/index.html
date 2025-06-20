@@ -14,37 +14,6 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
-
-    <!-- Dog List Table -->
-    <div class="mb-5">
-      <h4 class="mb-3">All Dogs</h4>
-      <div v-if="dogs.length">
-        <table class="table table-bordered table-hover align-middle">
-          <thead class="table-light">
-            <tr>
-              <th>Photo</th>
-              <th>Dog ID</th>
-              <th>Name</th>
-              <th>Size</th>
-              <th>Owner ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="dog in dogs" :key="dog.dog_id">
-              <td>
-                <img :src="dog.photo" alt="Dog photo" style="width:80px; height:80px; object-fit:cover; border-radius:12px;">
-              </td>
-              <td>{{ dog.dog_id }}</td>
-              <td>{{ dog.name }}</td>
-              <td>{{ dog.size }}</td>
-              <td>{{ dog.owner_id }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div v-else class="text-muted">Loading doggs...</div>
-    </div>
-
     <!--Login card-->
     <div class="card p-4 shadow-sm" style="max-width: 400px; margin:auto;">
       <h4 class="mb-3">Login</h4>
